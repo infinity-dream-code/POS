@@ -1,4 +1,6 @@
 <?php
+
+
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
@@ -35,7 +37,7 @@ class ApiBarangController extends Controller
     {
         try {
             if (is_numeric($query)) {
-                $barang = Barang::where('id', $query)->first();
+                $barang = Barang::find($query);
                 if ($barang) {
                     return response()->json([
                         'status' => 200,
